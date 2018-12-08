@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{%block man%}
+
+
+<style type="text/css">
+    
+.box {float: left;}
+
+.linha-vertical{ border-left: 2px solid; box-sizing: border-box;}
+
+</style>
+
+
+<br>
+    
+<div class="row">
+  
+<!------------------------------------------------------>
+    <div class="col-sm-6"> 
+      <h1 style="color:white ">Equipamentos Cadastrados</h1>
+    </div>
+
+<!------------------------------------------------------>
+    <div class="col-sm-6" style="text-align: right;" >       
+     <a class="btn btn-info btn-lg" 
+     href="{% url 'micro_criar_equipamentos' %}">+</a> 
+    </div>  
+  </div>
+</div> 
+
+<br>
+
+
+<div class="col-sm-12"  > 
+  <div class="container"> 
+    <div>
+      <table class="table"  style="color:white ">
+          <thead >
+              <tr>
+              <th scope="col">ID</th>
+              <th scope="col">DESCRIÇÃO</th>           
+              <th scope="col">STATUS</th>
+              <th scope="col"></th>
+              <th scope="col">EDITAR</th>
+              <th scope="col">DELETE</th>
+              </tr>
+          </thead>
+          <tbody style="color:white ">
+
+              {%  for bt in botao  %}
+              <tr>
+                <th scope="row" >{{bt.id}}</th>
+                <td>{{bt.descricao |upper }}</td>
+                <td >{{bt.status | upper}}</td>
+                <td style="width: 1000px"></td>
+
+                <th > <a class="btn btn-info btn-lg" id="button_edit" href="{% url 'micro_update_equipamento' bt.id %} "> E</a></th>
+                <th ><a  class="btn btn-info btn-lg" id="button_del" href="{% url 'micro_delete_equipamento' bt.id %} " >D</a> </th> 
+              </tr>
+
+              {%endfor%}
+
+          </tbody>
+
+      </table>
+    </div>
+  </div>
+ </div>
+
+
+</div>
+
+{% endblock %}

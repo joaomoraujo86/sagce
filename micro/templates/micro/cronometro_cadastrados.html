@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+
+
+{%block man%}
+
+
+<br>
+    
+<div class="row">
+  
+<!------------------------------------------------------>
+
+    <div class="col-sm-6"> 
+      <h1 style="color:white ">Cronometros Cadastrados</h1>
+    </div>
+
+<!------------------------------------------------------>
+    <div class="col-sm-6" style="text-align: right;" >       
+     <a class="btn btn-info btn-lg" 
+     href="{% url 'micro_cronometro' %}">+</a>
+    </div>  
+  </div>
+</div> 
+<br>
+<!--------------------------------------------------------->
+    <div class="col-sm-12" > 
+        <div class="container" > 
+                <table  class="table" style="color:white " >
+                    <thead >
+                        <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">TEMPO</th>           
+                        <th scope="col">PERIODO</th>
+                        <th scope="col"></th>
+                        <th scope="col">EDITAR</th>
+                        <th scope="col">DELETE</th>
+                        </tr>
+                    </thead>
+                        <tbody style="color:white ">
+
+                        {%  for bt in form  %}
+                        <tr>
+                          <th scope="row" >{{bt.id}}</th>
+                          <td >{{bt.every | upper }}</td>
+                          <td >
+
+                            {% if bt.period == 'seconds' %}
+                              segundos
+                            {% elif bt.period == 'minutes' %}
+                              minutos
+                            {% elif bt.period == 'hours' %}
+                              horas
+                            {% elif bt.period == 'days' %}
+                              dias                      
+                            {%else%}
+                              Nulo  
+                            {%endif%}
+
+                          </td>
+                          <td style="width: 1000px"></td>
+                          <td ><a href=" {% url 'micro_update_cronometro' bt.id %} " class="btn btn-info btn-lg" id="button_edit">E</a></td>
+                         <td ><a  class="btn btn-info btn-lg" id="button_del" href="{% url 'micro_delete_cronometro' bt.id %} " >D</a> </td>  
+                        </tr>
+                        {%endfor%}
+
+                        </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

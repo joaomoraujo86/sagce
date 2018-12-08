@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+
+{%block man%}
+<div class="row">
+	<div class="col-sm-6">
+	<h2 style="text-transform: uppercase;">Editando {{equip.name}} </h2>
+
+		<form action=" {% url 'micro_update_agenda_task' equip.id %} " method="POST" > 
+
+		{%csrf_token%}
+
+		{% bootstrap_form form %}
+
+		<button class="btn btn-primary"  type="submit" >Alterar</button>
+
+		</form>
+	</div>
+
+	<div class="col-sm-6" style="text-align: right;">
+        <div>         
+           <a class="btn btn-info" href="{% url 'micro_agenda_task_cadastradas' %}">
+             VOLTAR
+           </a> 
+        </div>  
+        <br><br><br><br><br><br><br><br>
+        <div style="text-align: left;"> 
+        OBSERVACAO: Escolher Agenda OU Cronometro
+        </div>
+    </div>
+</div>
+<!-- Fim EQUIPAMENTOS CADASTRADOS ------------------------------------------------------>
+
+
+
+
+{% endblock %}

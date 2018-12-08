@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{%block man%}
+
+
+<br>
+  
+<div class="row">
+  
+      <!------------------------------------------------------>
+    
+    <div class="col-sm-6">
+
+      <h1 style="color:white ">Tarefas Cadastradas</h1>
+    </div>
+
+<!------------------------------------------------------>
+    <div class="col-sm-6" style="text-align: right;" >       
+       <a class="btn btn-info btn-lg" 
+       href="{% url 'micro_agenda_task' %}">+</a> 
+    </div>  
+  </div>
+</div> 
+<br>
+
+<!--------------------------------------------------------->
+
+    <div class="col-sm-12"  > 
+        <div class="container"> 
+            
+            <table class="table" style="color:white ">
+                <thead >
+                    <tr>
+                    <th scope="col">NOME</th>
+                    <th scope="col">PROGRAMACAO</th>        
+                    <th scope="col">ACAO</th>
+                    <th scope="col">HABILITADA</th>
+                    <th scope="col">EQUIPAMENTO</th>
+                    <th scope="col"></th>
+                    <th scope="col">EDITAR</th>
+                    <th scope="col">DELETE</th>
+                    </tr>
+                </thead>
+                <tbody style="color:white ">
+
+                {%  for bt in form  %}
+                    <tr>
+                       
+                      <th style="text-transform: uppercase;" >{{bt.name}}</th>
+                      <td >
+
+                      {% if bt.interval == None %}
+                        {{bt.crontab| upper }}
+                      {% elif bt.crontab == None %} 
+                        {{bt.interval | upper }} 
+                      {% endif %}  
+
+                      </td>
+                      <td >
+                      {% if bt.task == 'micro.views.ligar' %}
+                        LIGAR
+                      {% else %}
+                        DESLIGAR
+                      {% endif %}
+                      </td>
+
+                      <td >
+                      {% if bt.enabled == True %}
+                        SIM
+                      {% else %}
+                        NAO
+                      {% endif %}
+                      </td>
+                      <td style="text-transform: uppercase;" >
+                      {{bt.equipamento}}
+
+                      </td>
+                      <td style="width: 10px"></td>
+                       <td ><a href="{% url 'micro_update_agenda_task' bt.id %} " class="btn btn-info btn-lg" id="button_edit">E</a></td>
+                      <td ><a  class="btn btn-info btn-lg" id="button_del" href="{% url 'micro_delete_agenda_task' bt.id %} " >D</a> </td> 
+                    </tr>
+                {%endfor%}
+
+                </tbody>
+
+            </table>
+        </div>
+    
+    </div>
+
+
+
+{% endblock %}
+

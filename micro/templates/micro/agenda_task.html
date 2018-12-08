@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{%block man%}
+
+<br>
+<div class="row">
+    <div class="col-sm-6">
+            
+            <h1 style="color:white; ">Cadastrar Tarefas</h1>  
+            <form  action="{% url 'micro_agenda_task_novo' %}" method="POST">
+                {% bootstrap_form agenda_task %}
+                
+                
+                {%csrf_token%}
+
+                
+                <p class="text-uppercase"> {% bootstrap_form teste %}</p>
+                
+                {% if crontab and interval == True  %}
+
+                 
+
+                {%endif%}
+
+                <!--{{form.as_p}}-->
+                <button type="submit" style="text-transform: uppercase" class="btn btn-info">Cadastrar</button>
+            </form>
+            
+       
+    </div>
+
+    <div class="col-sm-6" style="text-align: right;">
+        <div>         
+           <a class="btn btn-info" href="{% url 'micro_agenda_task_cadastradas' %}">
+             VOLTAR
+           </a> 
+        </div> 
+        <br><br><br><br><br><br><br><br>
+        <div style="text-align: left;"> 
+        OBSERVACAO: Escolher Agenda OU Cronometro
+        </div>
+    </div>
+
+    
+
+    
+</div>
+
+
+
+{% endblock %}
+

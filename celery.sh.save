@@ -1,0 +1,2 @@
+#!bin/  /home/pi/lamp/as2em/celery -A lamp worker -l info &
+

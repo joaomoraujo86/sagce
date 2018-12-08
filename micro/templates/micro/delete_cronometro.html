@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{%block man%}
+<div class="row">
+	<div class="col-sm-6">
+	<h2 style="text-transform: uppercase;" >voce tem certeza que deseja deletar o ( cronometro) </h2><br>
+
+		<form action=" {% url 'micro_delete_cronometro' form.id %} " method="POST" > 
+
+		{%csrf_token%}
+
+
+		<button class="btn btn-danger"  type="submit" >Deletar</button>
+
+		</form>
+	</div>
+
+	<div class="col-sm-6" style="text-align: right;">
+        <div>         
+           <a class="btn btn-info" href="{% url 'micro_cronometro_cadastrados' %}">
+             VOLTAR
+           </a> 
+        </div>  
+    </div>
+
+</div>	
+
+<!-- Fim EQUIPAMENTOS CADASTRADOS ------------------------------------------------------>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+
+
+{% block head %}
+
+
+
+<Meta http-equiv="refresh" content="10">
+{% endblock %}
+
+{%block man%}
+
+
+<!-- ------------------
+    JESUS TE AMA AMIGO
+  --------------------- -->  
+
+    <div class="col-sm-12" >
+        <div class="container" style="color:white ;text-align: right;">
+
+            <h2 id="margin" style="text-align: left;">{{hora}}</h2> 
+
+        </div>      
+    </div>
+
+
+
+<div class="col-sm-12" >
+<hr style="border-color: #C0C0C0" >
+</div>
+
+<br>
+<br>        
+<br>
+<div class="row">
+
+    <div class="col-sm-12" style="background-color: white; border-radius: 5px;">
+        
+        <ul>    
+
+        {%  for bt1 in botao  %}
+        <div  class="btn btn-link" id="tamanho-div-botao"><h5 class="text-uppercase">{{bt1.descricao}}</h5>
+        <a href="{% url 'micro_equipamentos' bt1.id %}"  style="text-decoration: none" ><button id="tamanho-botao"class= '{{bt1.cor}}'>{{bt1.status}}</button>&nbsp</a></div>
+
+        <!-- {% if bt1.status == "OFF"%}
+        <style type="text/css"> #t1{background: black;}</style>
+        {%endif%}-->            
+
+        {%endfor%}  
+        </ul>
+      
+    </div>
+</div>
+
+<!-- FIM BOTAO ------------------------------------------------------>
+<br>
+
+
+
+{% endblock %} 
+

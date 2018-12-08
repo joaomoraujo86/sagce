@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+
+
+
+    
+{%block man%}
+
+
+
+
+    
+
+<div class="col-sm-12">
+    <div class="container" >     
+        <h1 style="color:#4682B4 ">Cadastrar Equipamentos</h1>  
+        <form  action="{% url 'micro_botao' %}" method="POST">
+            {% bootstrap_form form %}
+            <!--variavel que o django injeta para combate a invasao de formulario (csrf_token)-->
+            {%csrf_token%}
+            <!--{{form.as_p}}-->
+            <button type="submit" style="text-transform: uppercase" class="btn btn-info">Cadastrar</button>
+        </form>
+        
+    </div>
+</div>
+   
+    
+                  
+
+{% endblock %}

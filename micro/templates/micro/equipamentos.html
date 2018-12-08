@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+
+{%block man%}
+
+<style type="text/css">
+    
+.box {
+ 
+ float: left;
+
+}
+
+.linha-vertical {
+ border-left: 2px solid;/* Adiciona borda esquerda na div como ser fosse uma linha.*/
+ box-sizing: border-box;
+}
+
+</style>
+
+
+<br>
+
+<div class="row"> 
+  <div class="col-sm-6">
+	    
+  	    <h1 style="color:white; ">Cadastrar Equipamentos</h1>  
+	    <form  action="{% url 'micro_botao' %}" method="POST">
+	        {% bootstrap_form form %}
+	        <!--variavel que o django injeta para combate a invasao de formulario (csrf_token)-->
+	        {%csrf_token%}
+	        <!--{{form.as_p}}-->
+	        <button type="submit" style="text-transform: uppercase" class="btn btn-info">Cadastrar</button>
+	    </form>
+        
+	</div>
+
+
+
+  <div class="col-sm-6" style="text-align: right;"> 
+     
+             
+       <a class="btn btn-info" href="{% url 'micro_equipamento_cadastrados' %}">
+         VOLTAR
+       </a> 
+  </div> 
+
+
+</div>
+
+
+{% endblock %}

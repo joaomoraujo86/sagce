@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+
+
+{%block man%}
+
+<style type="text/css">
+    
+#div{
+
+border-color: blue;
+width: 400px;
+height: 400px;
+
+}
+
+</style>
+
+<br><br><br><br>
+
+<div class="container" align="center" <h2 style="color: white;" >
+<!-- ------------------
+    JESUS TE AMA AMIGO
+  --------------------- -->  
+
+<div class="col-sm-4" >
+{% if form.errors %}
+<p>Usuario e Senha invalidas</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+    {% else %}
+    <p>Insira suas Credenciais</p>
+    {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+
+
+{% csrf_token %}
+{% bootstrap_form form %}
+
+
+<input type="submit" value="Entrar" style="text-transform: uppercase" class="btn btn-info">
+<input type="hidden" name="next" value="{{ next }}">
+</form>
+
+{# Assumes you setup the password_reset view in your URLconf #}
+<!--p><a href="{% url 'password_reset' %}">Esqueceu a Senha?</a></p-->
+</div>
+</div>
+
+{% endblock %}

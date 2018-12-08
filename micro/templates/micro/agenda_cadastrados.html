@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{%block man%}
+
+
+
+<br>
+    
+<div class="row">
+  
+      <!------------------------------------------------------>
+    <div class="col-sm-6"> 
+      <h1 style="color:white; ">Agendamentos Cadastrados</h1>
+    </div>
+
+      <!------------------------------------------------------>
+    <div class="col-sm-6" style="text-align: right;" >       
+     <a class="btn btn-info btn-lg"   
+     href="{% url 'micro_agenda' %}">+</a> 
+    </div>  
+  </div>
+</div> 
+      <!------------------------------------------------------>
+<br>
+<div class="col-sm-12"  > 
+        <div class="container" >
+            
+            <div>
+            <table class="table" style="color:white " >
+                <thead >
+                    <tr>
+                    <th scope="col">Descricao</th>
+                    <th scope="col">Min</th>
+                    <th scope="col">Hora</th>        
+                    <th scope="col">D.Sem</th>
+                    <th scope="col">D.Mes</th>
+                    <th scope="col">M.Ano</th>
+                    <th scope="col"></th>
+                    <th scope="col">EDITAR</th>
+                    <th scope="col">DELETE</th>
+                    </tr>
+                </thead>
+                <tbody style="color:white ">
+
+                {%  for bt in form  %}
+                <tr>
+                  <!--th scope="row" >{{bt.id}}</th-->
+                  <td >{{bt.descricao | upper}}</td>
+                  <td >{{bt.minute | upper}}</td>
+                  <td >{{bt.hour | upper}}</td>
+                  <td >
+
+                  {%if bt.day_of_week == '0' %}
+                      Domingo       
+                  {%elif bt.day_of_week == '1' %}
+                      Segunda
+                  {%elif bt.day_of_week == '2' %}
+                      Terca
+                  {%elif bt.day_of_week == '3'%}
+                      Quarta   
+                  {%elif bt.bt.day_of_week == '4 '%}
+                      Quinta    
+                  {%elif day_of_week == '5' %}
+                      Sexta
+                  {%elif bt.day_of_week == '6' %}
+                      Sabado        
+                  {%else %}
+                    Nulo
+                  {%endif%}
+
+                  </td>
+                  <td >{{bt.day_of_month | upper}}</td>
+                  <td >
+
+
+                  {%if bt.month_of_year == '1'%}
+                      Janeiro
+                  {%elif bt.month_of_year == '2'%}
+                      Fevereiro
+                  {%elif bt.month_of_year == '3'%}
+                      Marco
+                  {%elif bt.month_of_year == '4'%}
+                      Abril
+                  {%elif bt.month_of_year == '5'%}
+                      Maio
+                  {%elif bt.month_of_year == '6'%}
+                      Junho
+                  {%elif bt.month_of_year == '7'%}
+                      Julho
+                  {%elif bt.month_of_year == '8'%}
+                      Agosto
+                  {%elif bt.month_of_year == '9'%}
+                      Setembro
+                  {%elif bt.month_of_year == '10'%}
+                      Outubro
+                  {%elif bt.month_of_year == '11'%}
+                      Novembro
+                  {%elif bt.month_of_year == '12'%}
+                      Dezembro                                           
+                  {%else%}
+
+                    Nulo
+
+                  {%endif%}    
+          </td>
+                  <td style="width: 600px"></td>
+                  <td ><a  href="{% url 'micro_update_agenda' bt.id %}" class="btn btn-info btn-lg" id="button_edit">E</a></td>
+                  <td ><a  class="btn btn-info btn-lg" id="button_del" href="{% url 'micro_delete_agenda' bt.id %} " >D</a> </td> 
+                  
+                </tr>
+                {%endfor%}
+
+                </tbody>
+
+            </table>
+            </div>
+        </div>
+</div>
+
+
+
+{% endblock %}
+
