@@ -33,8 +33,9 @@ def home(request):
 @login_required
 def onoff(request):    
     botao = Equipamento.objects.all()
+    form = EquipamentoForm()
     hora = datetime.now()     
-    return render (request,'micro/onoff.html',{'botao':botao ,'hora': hora,})
+    return render (request,'micro/onoff.html',{'botao':botao ,'hora': hora,'form':form})
 
 @login_required
 def criar_equipamentos(request):
@@ -46,6 +47,7 @@ def criar_equipamentos(request):
 def equipamento_cadastrados(request):	
 	botao = Equipamento.objects.all()	
 	return render (request,'micro/equipamento_cadastrados.html',{'botao':botao})
+
 
 @login_required
 def botao_novo(request):
@@ -106,10 +108,13 @@ def update_equipamento(request,id):
 def delete_equipamento(request,id):
 	form = Equipamento.objects.get(id=id)	
 	if request.method == 'POST':
+		if form.status == 'OFF':
 		
-		form.delete()
-		return redirect('micro_equipamento_cadastrados')
+			form.delete()
+			return redirect('micro_equipamento_cadastrados')
 
+		else:
+			return render (request,'micro/not_delete.html',{'form':form})	
 	else:
 		return render (request,'micro/delete_equipamento.html',{'form':form})
 
@@ -132,9 +137,9 @@ def desligar(request,id):
 		#time.sleep(5)
 		#ser.close()
 		botao.status = "OFF"
-		botao.cor = "btn btn-secondary"	
+		botao.cor = "btn btn-danger"	
 		botao.save()
-		return redirect('micro_onoff')	
+		return render (request,'micro/onoff.html')
 
 
 @task
@@ -155,7 +160,7 @@ def ligar(request,id):
 		botao.cor = "btn btn-primary"
 		botao.save()
 		#cores.save()
-		return redirect('micro_onoff')			
+		return render (request,'micro/onoff.html')			
 
 ########################################################
 ########################################################

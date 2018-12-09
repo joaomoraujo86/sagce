@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/micro/views.py" line="292" mnemonic="0" />
+    <bookmark url="file://$PROJECT_DIR$/micro/views.py" line="294" mnemonic="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7da0cfa7-9269-4b8b-9efd-d8f2482272d7" name="Default Changelist" comment="" />
+    <list default="true" id="7da0cfa7-9269-4b8b-9efd-d8f2482272d7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/as2em" beforeDir="false" afterPath="$PROJECT_DIR$/as2em" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/celerybeat.pid" beforeDir="false" afterPath="$PROJECT_DIR$/celerybeat.pid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lamp/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/lamp/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/python3.5/site-packages/django/contrib/admin/templates/admin/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/python3.5/site-packages/django/contrib/admin/templates/admin/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/micro/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro/templates/micro/agenda.html" beforeDir="false" afterPath="$PROJECT_DIR$/micro/templates/micro/agenda.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro/templates/micro/agenda_cadastrados.html" beforeDir="false" afterPath="$PROJECT_DIR$/micro/templates/micro/agenda_cadastrados.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro/templates/micro/agenda_task.html" beforeDir="false" afterPath="$PROJECT_DIR$/micro/templates/micro/agenda_task.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro/templates/micro/agenda_task_cadastradas.html" beforeDir="false" afterPath="$PROJECT_DIR$/micro/templates/micro/agenda_task_cadastradas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro/templates/micro/cronometro.html" beforeDir="false" afterPath="$PROJECT_DIR$/micro/templates/micro/cronometro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro/templates/micro/cronometro_cadastrados.html" beforeDir="false" afterPath="$PROJECT_DIR$/micro/templates/micro/cronometro_cadastrados.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro/templates/micro/equipamentos.html" beforeDir="false" afterPath="$PROJECT_DIR$/micro/templates/micro/equipamentos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro/templates/micro/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/micro/templates/micro/logout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro/templates/micro/onoff.html" beforeDir="false" afterPath="$PROJECT_DIR$/micro/templates/micro/onoff.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/micro/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/micro/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,13 +37,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/micro/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7">
-              <caret line="300" selection-start-line="300" selection-end-line="300" />
+            <state>
+              <caret line="110" column="8" selection-start-line="110" selection-start-column="8" selection-end-line="110" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -31,12 +55,13 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="10" />
     <option name="y" value="40" />
     <option name="width" value="620" />
     <option name="height" value="420" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -92,7 +117,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
-      <option name="PARAMETERS" value="runserver 192.168.0.105:8000" />
+      <option name="PARAMETERS" value="runserver 192.168.0.104:8001" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -115,15 +140,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="28" width="640" height="452" extended-state="6" />
+    <frame x="-2" y="26" width="642" height="454" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24110033" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32738096" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.78571427" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.47761193" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.6925373" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -141,8 +166,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/micro/views.py</url>
-          <line>300</line>
-          <option name="timeStamp" value="3" />
+          <line>110</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -171,10 +196,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/lib/python3.5/dist-packages/django/contrib/auth/decorators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/micro/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7">
-          <caret line="300" selection-start-line="300" selection-end-line="300" />
+        <state>
+          <caret line="110" column="8" selection-start-line="110" selection-start-column="8" selection-end-line="110" selection-end-column="9" />
         </state>
       </provider>
     </entry>

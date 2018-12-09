@@ -11,7 +11,7 @@ urlpatterns = [
 	path(r'onoff/<int:id>/',equipamentos,name='micro_equipamentos'),
 	path('criar_equipamentos', criar_equipamentos ,name='micro_criar_equipamentos'),
 	path('equipamento_cadastrados', equipamento_cadastrados ,name='micro_equipamento_cadastrados'),
-	path('botao_novo', botao_novo ,name='micro_botao'),
+	path('botao_novo', botao_novo ,name='micro_botao_novo'),
 	path(r'update_equipamento/<int:id>/', update_equipamento ,name='micro_update_equipamento'),
 	path(r'delete_equipamento/<int:id>/', delete_equipamento ,name='micro_delete_equipamento'),
 

@@ -6,7 +6,26 @@
 <div class="row">
     <div class="col-sm-6">
             
-            <h1 style="color:white; ">Cadastrar Tarefas</h1>  
+        <h1 style="color:white; ">Cadastrar Tarefas</h1>  
+    </div>
+
+    <div class="col-sm-6" style="text-align: right;">
+        <div>         
+           <a class="btn btn-info" href="{% url 'micro_agenda_task_cadastradas' %}">
+             VOLTAR
+           </a> 
+        </div> 
+    </div>
+</div>    
+
+<div class="row">
+<div class="col-sm-12" >
+<hr style="border-color: #C0C0C0" >
+</div></div>
+
+    <div class="row">
+        <div class="col-sm-6">
+
             <form  action="{% url 'micro_agenda_task_novo' %}" method="POST">
                 {% bootstrap_form agenda_task %}
                 
@@ -16,7 +35,7 @@
                 
                 <p class="text-uppercase"> {% bootstrap_form teste %}</p>
                 
-                {% if crontab and interval == True  %}
+                {% if crontab and interval == True %}
 
                  
 
@@ -27,18 +46,35 @@
             </form>
             
        
-    </div>
-
-    <div class="col-sm-6" style="text-align: right;">
-        <div>         
-           <a class="btn btn-info" href="{% url 'micro_agenda_task_cadastradas' %}">
-             VOLTAR
-           </a> 
-        </div> 
-        <br><br><br><br><br><br><br><br>
-        <div style="text-align: left;"> 
-        OBSERVACAO: Escolher Agenda OU Cronometro
         </div>
+
+    <div class="col-sm-6" style="text-align: left;">
+        
+        <br><br><br><br><br>
+
+        <div style="text-align: left;">
+        <a href="{% url 'micro_cronometro_cadastrados' %}" target="_blank">
+
+            <button id="button_edit" class="btn btn-info" >CRONOMETROS</button> </a>
+        </div>
+
+        <div style="text-align: left;"> 
+        OBSERVACAO: ESCOLHER AGENDA OU CRONOMETRO
+        </div>
+        <p></p>
+
+
+        <div style="text-align: left;">
+        <a href="{% url 'micro_agenda_cadastrados' %}" target="_blank">
+
+            <button id="button_edit" class="btn btn-info" >AGENDA      </button> </a>
+        </div>
+
+
+        <!-- Links -->
+
+        
+
     </div>
 
     

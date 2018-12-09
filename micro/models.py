@@ -8,7 +8,7 @@ class Equipamento(models.Model):
 	descricao = models.CharField(max_length = 16)
 	status = models.CharField(max_length = 10,default='OFF')
 	codigo = models.CharField(max_length = 8 , default='0') 
-	cor =  models.CharField(max_length = 30 , default='btn btn-danger')
+	cor =  models.CharField(max_length = 30 , default='btn btn-danger',unique=False)
 	def __str__(self):
 		return self.descricao
 
@@ -19,7 +19,7 @@ class Horario(models.Model):
 
 class Gpequipamentos(models.Model):
 	
-	Equipamentos = models.ForeignKey(Equipamento,on_delete=models.CASCADE)
+	Equipamentos = models.ForeignKey(Equipamento,on_delete=models.CASCADE,unique=False)
 	
     
     

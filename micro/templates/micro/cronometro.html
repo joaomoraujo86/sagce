@@ -11,31 +11,36 @@
 <div class="row">
   <div class="col-sm-6">
          
-        <h1 style="color:white; ">Cadastrar Cronometros</h1>  
-        <form  action="{% url 'micro_cronometro_novo' %}" method="POST">
-            {% bootstrap_form cronometro %}
-            <!--variavel que o django injeta para combate a invasao de formulario (csrf_token)-->
-            {%csrf_token%}
-            <!--{{form.as_p}}-->
-            <button type="submit" style="text-transform: uppercase" class="btn btn-info">Cadastrar</button>
-        </form>
-        
+        <h1 style="color:white; ">Cadastrar Cronometros</h1> 
+  </div>
+  <div class="col-sm-6" style="text-align: right;">
+        <div>         
+           <a class="btn btn-info" href="{% url 'micro_agenda_task_cadastradas' %}">
+             VOLTAR
+           </a> 
+        </div> 
     </div>
+</div>    
+
+<div class="row">
+<div class="col-sm-12" >
+<hr style="border-color: #C0C0C0" >
+</div></div>
+
+      
 
 
-    <div class="col-sm-6" style="text-align: right;"> 
-     
-    <div>         
-       <a class="btn btn-info" href="{% url 'micro_cronometro_cadastrados' %}">
-         VOLTAR
-       </a> 
-    </div> 
-    
-</div>
 
-<br>
-    
-
+<div class="row" >
+  <div class="col-sm-6"> 
+      <form  action="{% url 'micro_cronometro_novo' %}" method="POST">
+          {% bootstrap_form cronometro %}
+          <!--variavel que o django injeta para combate a invasao de formulario (csrf_token)-->
+          {%csrf_token%}
+          <!--{{form.as_p}}-->
+          <button type="submit" style="text-transform: uppercase" class="btn btn-info">Cadastrar</button>
+      </form>     
+  </div>
 
 </div>
 {% endblock %}
