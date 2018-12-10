@@ -7,3 +7,9 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
 
 ]
+
+
+
+admin.site.site_header = 'SAGCE'
+admin.site.index_title = 'SAGCE'
+admin.site.site_title = 'SAGCE'
