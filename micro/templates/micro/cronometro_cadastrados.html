@@ -18,12 +18,15 @@
 
 <!------------------------------------------------------>
     <div class="col-sm-1" style="text-align: right;" >       
-     <a class="btn btn-info btn-lg" 
+     <a class="btn btn-info" 
      href="{% url 'micro_cronometro' %}">+</a>
     </div>  
   </div>
 </div> 
 <br><br>
+
+
+
 <!--------------------------------------------------------->
     <div class="col-sm-12" > 
         <div class="container" > 
@@ -60,8 +63,8 @@
 
                           </td>
                           <td style="width: 1000px"></td>
-                          <td ><a href=" {% url 'micro_update_cronometro' bt.id %} " class="btn btn-info btn-lg" id="button_edit">E</a></td>
-                         <td ><a  class="btn btn-info btn-lg" id="button_del" href="{% url 'micro_delete_cronometro' bt.id %} " >D</a> </td>  
+                          <td ><a href=" {% url 'micro_update_cronometro' bt.id %} " class="btn btn-success" id="button_edit">E</a></td>
+                         <td ><a  class="btn btn-danger" id="button_del" href="{% url 'micro_delete_cronometro' bt.id %} " >D</a> </td>  
                         </tr>
                         {%endfor%}
 

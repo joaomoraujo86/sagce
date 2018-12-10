@@ -31,11 +31,22 @@ def home(request):
 ########################################################
 
 @login_required
-def onoff(request):    
-    botao = Equipamento.objects.all()
-    form = EquipamentoForm()
-    hora = datetime.now()     
-    return render (request,'micro/onoff.html',{'botao':botao ,'hora': hora,'form':form})
+def onoff(request):  
+
+	busca = request.GET.get('pesquisa',None)
+
+	if busca:
+		botao = Equipamento.objects.all()
+		botao = botao.filter(descricao=busca)
+
+	else:	
+			
+		botao = Equipamento.objects.all()
+		  
+
+	form = EquipamentoForm()
+	hora = datetime.now() 
+	return render (request,'micro/onoff.html',{'botao':botao ,'hora': hora,'form':form})
 
 @login_required
 def criar_equipamentos(request):
@@ -44,8 +55,17 @@ def criar_equipamentos(request):
 	return render (request,'micro/equipamentos.html',{'form':form})
 
 @login_required
-def equipamento_cadastrados(request):	
-	botao = Equipamento.objects.all()	
+def equipamento_cadastrados(request):
+
+	busca = request.GET.get('pesquisa',None)
+
+	if busca:
+		botao = Equipamento.objects.all()
+		botao = botao.filter(descricao=busca)
+
+	else:	
+
+		botao = Equipamento.objects.all()	
 	return render (request,'micro/equipamento_cadastrados.html',{'botao':botao})
 
 
@@ -266,8 +286,19 @@ def agenda_task(request):
 					'agenda_task':agenda_task,'teste':teste })
 @login_required
 def agenda_task_cadastradas(request):
-	teste = Gpequipamentos.objects.all()
-	form = PeriodicTask.objects.all()
+
+	busca = request.GET.get('pesquisa',None)
+
+	if busca:
+		form = PeriodicTask.objects.all()
+		form = form.filter(name=busca)
+
+	else:	
+
+		teste = Gpequipamentos.objects.all()
+		form = PeriodicTask.objects.all()	
+
+	
 	return render (request,'micro/agenda_task_cadastradas.html',{'form':form,})
 @login_required
 def update_agenda_task(request,id):

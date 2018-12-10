@@ -22,17 +22,31 @@
 
 <!------------------------------------------------------>
     <div class="col-sm-1" style="text-align: right;" >       
-     <a class="btn btn-info btn-lg" 
+     <a class="btn btn-info" 
      href="{% url 'micro_criar_equipamentos' %}">+</a> 
     </div>  
  </div>
 </div> 
 
-<br><br>
+<br>
+
+<div class="row" >
+  <div class="col-sm-12"  > 
+    <div class="container">   
+      <form>
+        
+        <input type="text" name="pesquisa" placeholder="Digite sua busca" >
+        <button class="btn btn-info">Buscar</button>
+
+      </form>
+    </div>
+  </div>
+</div>
 
 
 <div class="col-sm-12"  > 
   <div class="container"> 
+    
     <div>
       <table class="table"  style="color:white ">
           <thead >
@@ -54,8 +68,8 @@
                 <td >{{bt.status | upper}}</td>
                 <td style="width: 1000px"></td>
 
-                <th > <a class="btn btn-info btn-lg" id="button_edit" href="{% url 'micro_update_equipamento' bt.id %} "> E</a></th>
-                <th ><a  class="btn btn-info btn-lg" id="button_del" href="{% url 'micro_delete_equipamento' bt.id %} " >D</a> </th> 
+                <th > <a class="btn btn-success" id="button_edit" href="{% url 'micro_update_equipamento' bt.id %} "> E</a></th>
+                <th ><a  class="btn btn-danger" id="button_del" href="{% url 'micro_delete_equipamento' bt.id %} " >D</a> </th> 
               </tr>
 
               {%endfor%}
@@ -68,6 +82,5 @@
  </div>
 
 
-</div>
 
 {% endblock %}

@@ -12,12 +12,25 @@
 
 <!------------------------------------------------------>
     <div class="col-sm-1" style="text-align: right;" >       
-       <a class="btn btn-info btn-lg" 
+       <a class="btn btn-info" 
        href="{% url 'micro_agenda_task' %}">+</a> 
     </div>  
     </div>
 </div> 
 <br><br>
+
+<div class="row" >
+  <div class="col-sm-12"  > 
+    <div class="container">   
+      <form>
+        
+        <input type="text" name="pesquisa" placeholder="Digite sua busca" >
+        <button class="btn btn-info">Buscar</button>
+
+      </form>
+    </div>
+  </div>
+</div>
 
 <!--------------------------------------------------------->
 
@@ -72,8 +85,8 @@
 
                       </td>
                       <td style="width: 10px"></td>
-                       <td ><a href="{% url 'micro_update_agenda_task' bt.id %} " class="btn btn-info btn-lg" id="button_edit">E</a></td>
-                      <td ><a  class="btn btn-info btn-lg" id="button_del" href="{% url 'micro_delete_agenda_task' bt.id %} " >D</a> </td> 
+                       <td ><a href="{% url 'micro_update_agenda_task' bt.id %} " class="btn btn-success" id="button_edit">E</a></td>
+                      <td ><a  class="btn btn-danger" id="button_del" href="{% url 'micro_delete_agenda_task' bt.id %} " >D</a> </td> 
                     </tr>
                 {%endfor%}
 
