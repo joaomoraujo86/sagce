@@ -23,7 +23,20 @@
     </div>  
   </div>
 </div> 
-<br><br>
+<br>
+
+<div class="row" >
+  <div class="col-sm-12"  > 
+    <div class="container">   
+      <form>
+        
+        <input type="text" name="pesquisa" placeholder="Digite sua busca" >
+        <button class="btn btn-info">Buscar</button>
+
+      </form>
+    </div>
+  </div>
+</div>
 
 
 
@@ -45,7 +58,7 @@
 
                         {%  for bt in form  %}
                         <tr>
-                          <th scope="row" >{{bt.id}}</th>
+                          <th scope="row" >{{bt.descricao}}</th>
                           <td >{{bt.every | upper }}</td>
                           <td >
 
