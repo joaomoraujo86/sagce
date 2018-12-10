@@ -37,7 +37,7 @@ def onoff(request):
 
 	if busca:
 		botao = Equipamento.objects.all()
-		botao = botao.filter(descricao=busca)
+		botao = botao.filter(descricao__istartswith=busca)
 
 	else:	
 			
@@ -61,7 +61,7 @@ def equipamento_cadastrados(request):
 
 	if busca:
 		botao = Equipamento.objects.all()
-		botao = botao.filter(descricao=busca)
+		botao = botao.filter(descricao__istartswith=busca)
 
 	else:	
 
@@ -291,7 +291,7 @@ def agenda_task_cadastradas(request):
 
 	if busca:
 		form = PeriodicTask.objects.all()
-		form = form.filter(name=busca)
+		form = form.filter(name__istartswith=busca)
 
 	else:	
 

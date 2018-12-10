@@ -19,14 +19,15 @@ height: 400px;
 
 <br><br><br><br>
 
-<div class="container" align="center"  style="background-color: white; padding: 10px 10px 10px 10px ;" >
+<div class="container" style=" border-radius: 5px; width: 400px; background-color: white; padding: 30px 30px 30px 30px ;" >
 <!-- ------------------
     JESUS TE AMA AMIGO
   --------------------- -->  
-
+<h1 style="color: #7A8B8B; text-align: center;" >SAGCE</h1>
 <div class="col-sm-4" >
-{% if form.errors %}
-<p>Usuario e Senha invalidas</p>
+
+<!--{% if form.errors %}
+<p style="color: #7A8B8B;" >Usuario e Senha invalidas</p>
 {% endif %}
 
 {% if next %}
@@ -36,16 +37,16 @@ height: 400px;
     {% else %}
     <p>Insira suas Credenciais</p>
     {% endif %}
-{% endif %}
-
-<form method="post" action="{% url 'login' %}">
+{% endif %}-->
+	
+<form align="center" style=" width: 300px;" method="post" action="{% url 'login' %}">
 
 
 {% csrf_token %}
 {% bootstrap_form form %}
 
 
-<input type="submit" value="Entrar" style="text-transform: uppercase" class="btn btn-info">
+<input style="width: 90px;" type="submit" value="Entrar" style="text-transform: uppercase" class="btn btn-info">
 <input type="hidden" name="next" value="{{ next }}">
 </form>
 
