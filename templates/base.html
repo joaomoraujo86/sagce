@@ -30,11 +30,11 @@ text-transform: uppercase;
 #tamanho-div-botao{
 
 
-margin: 5px 5px 5px 5px ;
+margin: 5px 5px 25px 5px ;
 
 width: 200px;
 height:100px;
-color: #7A8B8B;
+color: #09203f/*#7A8B8B*/;
 text-decoration: none;
 
 }
@@ -64,10 +64,13 @@ border-radius: 50px;
 body {
 
   font-family: "Times New Roman";
-  background-color:#7A8B8B; 
-  color: white;
   
+  color: white;
+  background-image: linear-gradient(to top, #537895 0%, #09203f 100%);
+  min-height:  800px;
 }
+
+
 
 
 input{
@@ -86,7 +89,7 @@ text-align: ;
 <nav style="width: 100%; height: 30px;" ></nav>
 
 <h5><nav  class="navbar navbar-expand-lg navbar-light bg-light"  >
-  <a class="navbar-brand " href="#" style="color: #7A8B8B;">SAGCE - Lamp Tecnologia</a>
+  <a class="navbar-brand " href="#" style="color:  #09203f ;">SAGCE - Lamp Tecnologia</a>
 
   <div class="collapse navbar-collapse"></div>
   <div class="collapse navbar-collapse"></div>
@@ -97,26 +100,26 @@ text-align: ;
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul  class="navbar-nav mr-auto">
       <li class="nav-item" id="nav">
-         <a class="nav-link  " href="{% url 'micro_onoff'%}">Home</a>
+         <a style="color: #09203f;" class="nav-link  " href="{% url 'micro_onoff'%}">Home</a>
      </li>
       <li class="nav-item">
-            <a class="nav-link  " href="{% url 'micro_equipamento_cadastrados'%}" >Equipamentos</a>
+          <a style="color: #09203f;" class="nav-link  " href="{% url 'micro_equipamento_cadastrados'%}" >Equipamentos</a>
             </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a style="color: #09203f;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Automacao
         </a>
         <div  class="dropdown-menu" aria-labelledby="navbarDropdown">
            
-          <a class="dropdown-item" href="{% url 'micro_cronometro_cadastrados' %}" >
+          <a style="color: #09203f;" class="dropdown-item" href="{% url 'micro_cronometro_cadastrados' %}" >
             Cronometro</a>
           <div class="dropdown-divider"></div>    
           <a class="dropdown-item" href="{% url 'micro_agenda_cadastrados' %}">
         Agenda</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{% url 'micro_agenda_task_cadastradas' %}">Agendador de Taredas</a>
+          <a style="color: #09203f;" class="dropdown-item" href="{% url 'micro_agenda_task_cadastradas' %}">Agendador de Taredas</a>
         </div>
       </li>
       {% if user.is_authenticated %}
@@ -126,7 +129,7 @@ text-align: ;
             </li>
 
             <li class="nav-item">
-            <a class="nav-link " href=" 
+            <a style="color: #09203f;" class="nav-link " href=" 
             {% url 'logout' %} ">Sair</a>
             </li>
        {%endif%}     

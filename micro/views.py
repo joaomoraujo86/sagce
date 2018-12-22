@@ -208,7 +208,12 @@ def update_cronometro(request,id):
 
 	if request.method == 'POST':
 		if form.is_valid():
-			form.save()
+			a = form.save(commit=False)
+			if a.every < 0:
+				a.every = 0
+				a.save()
+			else:
+				a.save()
 			return redirect('micro_cronometro_cadastrados')
 
 	else:
